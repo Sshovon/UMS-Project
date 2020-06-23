@@ -7,19 +7,24 @@ import java.util.logging.Logger;
 public class conn {
     Connection c;
     Statement s;
+    String driver = "com.mysql.cj.jdbc.Driver";
+    String url="jdbc:mysql://localhost:3306/newdb";
+    String user="root";
+    String password="";
+
     
     public conn(){
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            c=DriverManager.getConnection("jdbc::mysql://localhost:3306/newdb","root","");
+            Class.forName(driver);
+            c=DriverManager.getConnection(url,user,password);
             s=c.createStatement();
+            System.out.println("Established Connection");
             
-        }catch(ClassNotFoundException e){
-            System.out.println(e);
-        } catch (SQLException ex) {
-            Logger.getLogger(conn.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
-        
     }
     
 }

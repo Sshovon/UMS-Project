@@ -11,6 +11,7 @@ package umsystem;
  */
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.ResultSet;
 import javax.swing.*;
 
 public class Login extends JFrame implements ActionListener {
@@ -75,7 +76,22 @@ public class Login extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==jB1){
             try{
-
+                    conn c1 = new conn();
+                    String userID= jTF1.getText();
+                    String password =jPF1.getText();
+                    
+                    String q = "select * from login where username='"+userID+"' and password='"+password+"';";
+                    
+                    ResultSet rs= c1.s.executeQuery(q);
+                    if(rs.next()){
+                        System.out.println("YO boys");
+                        
+                    }else{
+                       JOptionPane.showMessageDialog(null, "Invaid");
+                       this.setVisible(false);
+                       System.exit(0);
+                    }
+             
             }catch(Exception e){
 
              }
