@@ -84,7 +84,10 @@ public class Login extends JFrame implements ActionListener {
                     
                     ResultSet rs= c1.s.executeQuery(q);
                     if(rs.next()){
-                        System.out.println("YO boys");
+                        //System.out.println("YO boys");
+                        new Project().setVisible(true);
+                        this.setVisible(false);
+                        this.dispose();
                         
                     }else{
                        JOptionPane.showMessageDialog(null, "Invaid");
