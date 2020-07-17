@@ -22,7 +22,6 @@ public class Login extends JFrame implements ActionListener {
     
     Login(){
         super("Login");
-        
         setLayout(null); /// custom layout 
          getContentPane().setBackground(Color.WHITE); ///getContentPane is used to apply something in the whole frame
          l1 =new JLabel ("ID" );
