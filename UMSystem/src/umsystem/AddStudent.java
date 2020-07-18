@@ -211,7 +211,8 @@ public class AddStudent extends JFrame implements ActionListener {
 
             try{
                 conn c=new conn();
-                String query="insert into student_values ('"+sname+"', '"+sfname+"' , '"+sdob +"' , '"+sphone+"' , '"+spa+"', '"+semail+"' , '"+sregi +"' , '"+ sssc+"' , '"+shsc + "' , '"+ scourse+"' , '"+ ssubject +"')";
+                String query="insert into student_values (name,fname,dob,phone,address,email,registration,ssc,hsc,course,sub) " +
+                        "values ('" +sname+ "', '"+sfname+"' , '"+sdob +"' , '"+sphone+"' , '"+spa+"', '"+semail+"' , '"+sregi +"' , '"+ sssc+"' , '"+shsc + "' , '"+ scourse+"' , '"+ ssubject +"')";
                 c.s.executeUpdate(query);
                 JOptionPane.showMessageDialog(null,"Successfully inserted new information");
                 this.setVisible(false);
