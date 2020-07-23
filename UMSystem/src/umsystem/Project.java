@@ -317,6 +317,12 @@ public class Project extends JFrame implements ActionListener {
             new AddStudent().setVisible(true);
         }else if(command.equals("New Faculty")){
             new AddTeacher().setVisible(true);
+        }else if(command.equals("Enter Marks")){
+            new EnterMarks().setVisible(true);
+        }else if(command.equals("Exam Details")){
+            new ExaminationDetails().setVisible(true);
+        }else if(command.equals("Exit")){
+            System.exit(0);
         }
 
 
