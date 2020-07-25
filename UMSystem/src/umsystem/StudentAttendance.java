@@ -13,6 +13,7 @@ public class StudentAttendance extends JFrame implements ActionListener {
     JButton jBSubmit,jBCancel;
     JTextField jDay,jMonth;
 
+
     public StudentAttendance(){
 
         setLayout(new GridLayout(4,2,10,10));

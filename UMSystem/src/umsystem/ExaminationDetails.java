@@ -59,7 +59,7 @@ public class ExaminationDetails extends JFrame implements ActionListener {
         table.setBackground(Color.white);
         table.setForeground(Color.DARK_GRAY);
         table.setFont(new Font("Trebuchet MS",Font.BOLD,16));
-        jScrollPane .setViewportView(table);
+        jScrollPane.setViewportView(table);
 
         b1=new JButton("Result");
         b1.setForeground(Color.WHITE);

@@ -52,7 +52,7 @@ public class Project extends JFrame implements ActionListener {
 
         ////           user             ////
         JMenu user = new JMenu("User");
-        JMenuItem user1 = new JMenuItem("Teacher Details");
+        JMenuItem user1 = new JMenuItem("Faculty Details");
         JMenuItem user2= new JMenuItem("Student Details");
         user.setForeground(Color.RED);
 
@@ -83,7 +83,7 @@ public class Project extends JFrame implements ActionListener {
 
         JMenu attendance = new JMenu("Attendance");
         attendance.setForeground(Color.blue);
-        JMenuItem teacherAttendace = new JMenuItem("Teacher Attendance");
+        JMenuItem teacherAttendace = new JMenuItem("Faculty Attendance");
         JMenuItem studentAttendace= new JMenuItem("Student Attendance");
 
         ImageIcon imageIcon10= new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon15.png"));
@@ -146,7 +146,7 @@ public class Project extends JFrame implements ActionListener {
 
         JMenu updateDetails = new JMenu("Update Details");
         JMenuItem updateStudent = new JMenuItem("Update Students");
-        JMenuItem updateTeacher = new JMenuItem("Update Teacher");
+        JMenuItem updateTeacher = new JMenuItem("Update Faculty");
         updateDetails.setForeground(Color.blue);
 
         ImageIcon imageIcon18 = new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon5.png"));
@@ -321,7 +321,12 @@ public class Project extends JFrame implements ActionListener {
             new EnterMarks().setVisible(true);
         }else if(command.equals("Exam Details")){
             new ExaminationDetails().setVisible(true);
-        }else if(command.equals("Exit")){
+        }else if(command.equals("Faculty Attendance")){
+            new TeacherAttendance().setVisible(true);
+        }else if(command.equals("Student Attendance")){
+            new StudentAttendance().setVisible(true);
+        }
+        else if(command.equals("Exit")){
             System.exit(0);
         }
 
