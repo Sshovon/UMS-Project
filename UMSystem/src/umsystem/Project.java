@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 public class Project extends JFrame implements ActionListener {
 
@@ -85,6 +86,8 @@ public class Project extends JFrame implements ActionListener {
         attendance.setForeground(Color.blue);
         JMenuItem teacherAttendace = new JMenuItem("Faculty Attendance");
         JMenuItem studentAttendace= new JMenuItem("Student Attendance");
+        JMenuItem teacherAttendanceDetails = new JMenuItem("Faculty Attendance Details");
+        JMenuItem studentAttendanceDetails = new JMenuItem("Student Attendance Details");
 
         ImageIcon imageIcon10= new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon15.png"));
         Image image5= imageIcon10.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
@@ -103,9 +106,29 @@ public class Project extends JFrame implements ActionListener {
         studentAttendace.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B,ActionEvent.CTRL_MASK));
         studentAttendace.setBackground(Color.white);
 
+        ImageIcon imageIcon33 = new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon14.jpg"));
+        Image image20=imageIcon33.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon34=new ImageIcon(image20);
+        studentAttendanceDetails.setIcon(imageIcon34);
+        studentAttendanceDetails.setMnemonic(KeyEvent.VK_G);
+        studentAttendanceDetails.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_G,ActionEvent.CTRL_MASK));
+        studentAttendanceDetails.setBackground(Color.white);
+
+        ImageIcon imageIcon35 = new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon15.png"));
+        Image image21=imageIcon35.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon36=new ImageIcon(image21);
+        teacherAttendanceDetails.setIcon(imageIcon36);
+        teacherAttendanceDetails.setMnemonic(KeyEvent.VK_H);
+        teacherAttendanceDetails.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,ActionEvent.CTRL_MASK));
+        teacherAttendanceDetails.setBackground(Color.white);
+
+
+
 
         teacherAttendace.addActionListener(this);
+        teacherAttendanceDetails.addActionListener(this);
         studentAttendace.addActionListener(this);
+        studentAttendanceDetails.addActionListener(this);
 
         ///    attendance /////
 
@@ -113,7 +136,7 @@ public class Project extends JFrame implements ActionListener {
         /// examination /////
 
         JMenu exam = new JMenu("Examination");
-        JMenuItem examDetails = new JMenuItem("Exam Details");
+        JMenuItem examDetails = new JMenuItem("Results");
         JMenuItem enterMarks= new JMenuItem("Enter Marks");
         exam.setForeground(Color.red);
 
@@ -243,10 +266,10 @@ public class Project extends JFrame implements ActionListener {
         JMenuItem aus=new JMenuItem("About Us");
         about.setForeground(Color.red);
 
-        ImageIcon imageIcon32 = new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon13.jpg"));
-        Image image16=imageIcon32.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
-        ImageIcon imageIcon33 = new ImageIcon(image16);
-        aus.setIcon(imageIcon33);
+        ImageIcon imageIcon42 = new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon13.jpg"));
+        Image image16=imageIcon42.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon43 = new ImageIcon(image16);
+        aus.setIcon(imageIcon43);
         aus.setBackground(Color.white);
         aus.setMnemonic(KeyEvent.VK_V);
         aus.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V,ActionEvent.CTRL_MASK));
@@ -259,10 +282,10 @@ public class Project extends JFrame implements ActionListener {
         JMenu exit = new JMenu("Exit");
         JMenuItem ex= new JMenuItem("Exit");
 
-        ImageIcon imageIcon34 = new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon12.png"));
-        Image image17=imageIcon34.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
-        ImageIcon imageIcon35=new ImageIcon(image17);
-        ex.setIcon(imageIcon35);
+        ImageIcon imageIcon44 = new ImageIcon(ClassLoader.getSystemResource("umsystem/projectsicons/icon12.png"));
+        Image image17=imageIcon44.getImage().getScaledInstance(25,25,Image.SCALE_DEFAULT);
+        ImageIcon imageIcon45=new ImageIcon(image17);
+        ex.setIcon(imageIcon45);
 
         ex.addActionListener(this);
 
@@ -275,6 +298,8 @@ public class Project extends JFrame implements ActionListener {
         user.add(user2);
         attendance.add(teacherAttendace);
         attendance.add(studentAttendace);
+        attendance.add(teacherAttendanceDetails);
+        attendance.add(studentAttendanceDetails);
         exam.add(examDetails);
         exam.add(enterMarks);
         updateDetails.add(updateStudent);
@@ -319,15 +344,41 @@ public class Project extends JFrame implements ActionListener {
             new AddTeacher().setVisible(true);
         }else if(command.equals("Enter Marks")){
             new EnterMarks().setVisible(true);
-        }else if(command.equals("Exam Details")){
+        }else if(command.equals("Results")){
             new ExaminationDetails().setVisible(true);
         }else if(command.equals("Faculty Attendance")){
             new TeacherAttendance().setVisible(true);
         }else if(command.equals("Student Attendance")){
             new StudentAttendance().setVisible(true);
         }
+        else if(command.equals("Faculty Attendance Details")){
+            new TeacherAttendanceDetails().setVisible(true);
+        }
+        else if(command.equals("Student Attendance Details")){
+            new StudentAttendanceDetail().setVisible(true);
+        }
         else if(command.equals("Exit")){
             System.exit(0);
+        }else if(command.equals("NotePad")){
+            try {
+                Runtime.getRuntime().exec("notepad.exe");
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }
+        else if(command.equals("Calculator")){
+            try {
+                Runtime.getRuntime().exec("calc.exe");
+            } catch (IOException e) {
+                System.out.println(e);
+            }
+        }
+        else if(command.equals("Web Browser")){
+            try {
+                Runtime.getRuntime().exec("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+            } catch (IOException e) {
+                System.out.println(e);
+            }
         }
 
 
