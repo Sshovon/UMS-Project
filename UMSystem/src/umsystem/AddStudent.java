@@ -206,8 +206,8 @@ public class AddStudent extends JFrame implements ActionListener {
             String sssc=tfssc.getText();
             String shsc=tfHsc.getText();
             String spa=tf_present_address.getText();
-            String scourse=(String)courseComboBox.getSelectedItem();
-            String ssubject=(String)subComboBox.getSelectedItem();
+            String scourse=courseComboBox.getSelectedItem().toString();
+            String ssubject=subComboBox.getSelectedItem().toString();
 
             try{
                 conn c=new conn();

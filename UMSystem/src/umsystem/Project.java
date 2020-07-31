@@ -379,6 +379,10 @@ public class Project extends JFrame implements ActionListener {
             } catch (IOException e) {
                 System.out.println(e);
             }
+        }else if(command.equals("Update Students")){
+            new StudentDetails().setVisible(true);
+        }else if(command.equals("About Us")){
+            new AboutUS().setVisible(true);
         }
 
 
